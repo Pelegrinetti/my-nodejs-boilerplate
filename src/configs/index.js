@@ -10,6 +10,7 @@ module.exports = {
   db: {
     uri: process.env.DB_URI || 'mongodb://localhost',
     port: process.env.DB_PORT || 27017,
-    database: process.env.DB_DATABASE
+    database: process.env.NODE_ENV === 'test'
+      ? process.env.DB_DATABASE_TEST : process.env.DB_DATABASE
   }
 }

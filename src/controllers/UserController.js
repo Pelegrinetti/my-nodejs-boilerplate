@@ -3,7 +3,6 @@ const User = require('../models/User')
 exports.create = async (req, res) => {
   try {
     const user = await User.create(req.body)
-    console.log('OI')
 
     return res.send({ user })
   } catch (error) {
