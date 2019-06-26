@@ -27,6 +27,7 @@ Remember: set your environment variables
 - [Morgan](https://github.com/expressjs/morgan)
 - [Winston](https://github.com/winstonjs/winston)
 - [Cors](https://github.com/expressjs/cors)
+- [JsonWebToken](https://github.com/auth0/node-jsonwebtoken)
 
 ## Development libraries
 - [Commitlint](https://github.com/conventional-changelog/commitlint)
