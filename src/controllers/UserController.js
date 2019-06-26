@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs')
+
 const User = require('../models/User')
 
 exports.create = async (req, res) => {
@@ -22,10 +24,19 @@ exports.read = async (req, res) => {
 
 exports.update = async (req, res) => {
   try {
+    const { password } = req.body
+
+    const token = await bcrypt.hash(password, 10)
+
     const user = await User.findOneAndUpdate(
       { _id: req.params.id },
-      req.body,
-      { new: true }
+      {
+        ...req.body,
+        password: token
+      },
+      {
+        new: true
+      }
     )
 
     return res.send({ user })
